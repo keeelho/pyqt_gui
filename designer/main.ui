@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1212</width>
+    <height>870</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="logolbl">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(0, 170, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="content_layout" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="right_layout" native="true">
+         <widget class="QFrame" name="face_frame">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>640</width>
+            <height>480</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>640</width>
+            <height>480</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>640</width>
+            <height>480</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame {
+	background-color: rgb(85, 0, 127);
+	border-radius: 10;
+}</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_1">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>520</y>
+            <width>301</width>
+            <height>48</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>소스를 선택하세요.</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QCheckBox" name="camera0">
+             <property name="text">
+              <string>내장카메라</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="video">
+             <property name="text">
+              <string>외장카메라</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="camera1">
+             <property name="text">
+              <string>비디오</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="detail_graph1" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>20</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="detail_graph2" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>140</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="detail_graph3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>270</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="detail_graph4" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>390</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="realtime_graph1" native="true">
+          <property name="geometry">
+           <rect>
+            <x>380</x>
+            <y>520</y>
+            <width>391</width>
+            <height>121</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="realtime_graph2" native="true">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>520</y>
+            <width>391</width>
+            <height>121</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="realtime_graph3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>380</x>
+            <y>650</y>
+            <width>391</width>
+            <height>121</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QWidget" name="realtime_graph4" native="true">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>650</y>
+            <width>391</width>
+            <height>121</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
