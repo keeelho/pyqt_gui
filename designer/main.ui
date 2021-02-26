@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1212</width>
+    <width>1210</width>
     <height>870</height>
    </rect>
   </property>
@@ -31,11 +31,11 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QLabel" name="logolbl">
+     <widget class="QWidget" name="logoWidget" native="true">
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>50</height>
+        <height>80</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -47,12 +47,28 @@
       <property name="styleSheet">
        <string notr="true">background-color:rgb(0, 170, 255);</string>
       </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
+      <widget class="QLabel" name="logolbl">
+       <property name="geometry">
+        <rect>
+         <x>1090</x>
+         <y>5</y>
+         <width>100</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../../deepmedi_GUI/icons/deepmedi-logo_white_cut.png</pixmap>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
      </widget>
     </item>
     <item>
@@ -75,7 +91,10 @@
        </property>
        <item>
         <widget class="QWidget" name="right_layout" native="true">
-         <widget class="QFrame" name="face_frame">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255);</string>
+         </property>
+         <widget class="QFrame" name="lblDisplay">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -108,6 +127,77 @@
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
+          <widget class="QPushButton" name="btnStart">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>420</y>
+             <width>51</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>시작</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnPause">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>420</y>
+             <width>51</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>멈춤</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btnStop">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>420</y>
+             <width>51</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>정지</string>
+           </property>
+          </widget>
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="geometry">
+            <rect>
+             <x>175</x>
+             <y>435</y>
+             <width>451</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: transparent;</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lblclock">
+           <property name="geometry">
+            <rect>
+             <x>575</x>
+             <y>456</y>
+             <width>61</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Time</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
          </widget>
          <widget class="QGroupBox" name="groupBox_1">
           <property name="geometry">
@@ -118,26 +208,29 @@
             <height>48</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">border-line:rgb(0, 0, 127);</string>
+          </property>
           <property name="title">
            <string>소스를 선택하세요.</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QCheckBox" name="camera0">
+            <widget class="QRadioButton" name="camera0_checked">
              <property name="text">
               <string>내장카메라</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="video">
+            <widget class="QRadioButton" name="camera1_checked">
              <property name="text">
               <string>외장카메라</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="camera1">
+            <widget class="QRadioButton" name="video_checked">
              <property name="text">
               <string>비디오</string>
              </property>
@@ -145,17 +238,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="detail_graph1" native="true">
-          <property name="geometry">
-           <rect>
-            <x>690</x>
-            <y>20</y>
-            <width>501</width>
-            <height>101</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QWidget" name="detail_graph2" native="true">
+         <widget class="QWidget" name="signal_Plt2" native="true">
           <property name="geometry">
            <rect>
             <x>690</x>
@@ -164,66 +247,298 @@
             <height>101</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(202, 230, 255);
+border-radius: 10;</string>
+          </property>
          </widget>
-         <widget class="QWidget" name="detail_graph3" native="true">
+         <widget class="QWidget" name="signal_Plt3" native="true">
           <property name="geometry">
            <rect>
             <x>690</x>
-            <y>270</y>
+            <y>260</y>
             <width>501</width>
             <height>101</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(202, 230, 255);
+border-radius: 10;</string>
+          </property>
          </widget>
-         <widget class="QWidget" name="detail_graph4" native="true">
+         <widget class="QWidget" name="signal_Plt4" native="true">
           <property name="geometry">
            <rect>
             <x>690</x>
-            <y>390</y>
+            <y>380</y>
             <width>501</width>
             <height>101</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(202, 230, 255);
+border-radius: 10;</string>
+          </property>
          </widget>
-         <widget class="QWidget" name="realtime_graph1" native="true">
+         <widget class="QGroupBox" name="groupBox_2">
           <property name="geometry">
            <rect>
-            <x>380</x>
+            <x>20</x>
+            <y>580</y>
+            <width>301</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>파일을 선택하세요.(비디오 선택시 활성화 됩니다.)</string>
+          </property>
+          <widget class="QPushButton" name="btnOpen">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>21</y>
+             <width>61</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="video_auto">
+           <property name="geometry">
+            <rect>
+             <x>106</x>
+             <y>25</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>자동</string>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="video_manual">
+           <property name="geometry">
+            <rect>
+             <x>201</x>
+             <y>25</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>수동</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="signal_Plt5" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>500</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(202, 230, 255);
+border-radius: 10;</string>
+          </property>
+         </widget>
+         <widget class="QWidget" name="results_box" native="true">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
             <y>520</y>
-            <width>391</width>
-            <height>121</height>
+            <width>311</width>
+            <height>241</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(202, 230, 255);
+border-radius: 10;</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Repiration Rate</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>True/False</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>BP</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>HR</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
-         <widget class="QWidget" name="realtime_graph2" native="true">
+         <widget class="QPushButton" name="pushButton">
           <property name="geometry">
            <rect>
-            <x>800</x>
-            <y>520</y>
-            <width>391</width>
-            <height>121</height>
+            <x>890</x>
+            <y>730</y>
+            <width>131</width>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="text">
+           <string>저장하고 결과값 보기</string>
           </property>
          </widget>
-         <widget class="QWidget" name="realtime_graph3" native="true">
+         <widget class="QLabel" name="label_5">
           <property name="geometry">
            <rect>
-            <x>380</x>
-            <y>650</y>
-            <width>391</width>
-            <height>121</height>
+            <x>670</x>
+            <y>6</y>
+            <width>91</width>
+            <height>31</height>
            </rect>
+          </property>
+          <property name="text">
+           <string>실시간 HR 변화</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QWidget" name="realtime_graph4" native="true">
+         <widget class="QLabel" name="label_6">
           <property name="geometry">
            <rect>
-            <x>800</x>
-            <y>650</y>
-            <width>391</width>
-            <height>121</height>
+            <x>671</x>
+            <y>124</y>
+            <width>91</width>
+            <height>31</height>
            </rect>
           </property>
+          <property name="text">
+           <string>SDNN 변화</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>670</x>
+            <y>364</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>PPG Signal</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>679</x>
+            <y>482</y>
+            <width>51</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>FFT</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>600</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Respiration rate</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QWidget" name="signal_Plt6" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>620</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(202, 230, 255);
+border-radius: 10;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>670</x>
+            <y>245</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>거짓말 탐지기</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>20</y>
+            <width>501</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="signal_layout1">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+          </layout>
          </widget>
         </widget>
        </item>
