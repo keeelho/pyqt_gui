@@ -38,11 +38,25 @@ class GUI(QMainWindow, form_class):
         ax1.patch.set_facecolor('white')
         ax1.set_xticks([0,10,20,30,40,50,60])
         ax1.set_yticks([40,70,100,130])
+
+        fig2 = Figure()
+        obj2 = FigureCanvas(fig2)
+        ax2 = fig2.add_subplot(111)
+        ax1.plot(np.arange(0,60,1), [60 for _ in range(60)])
+        ax1.plot(np.arange(0,60,1), [110 for _ in range(60)])
+        x2 = [0,5,10,15,20,25,30,35,40,45,50,55]
+        y2 = [58,63,69,70,72,68,60,59,70,68,65,60]
+        ax1.scatter(x2,y2)
+        fig2.patch.set_facecolor('white')
+        ax2.patch.set_facecolor('white')
+        ax2.set_xticks([0,10,20,30,40,50,60])
+        ax2.set_yticks([40,70,100,130])
         # fig1.patch.set_alpha(0)
         # ax1.patch.set_alpha(0)
         # fig1.tight_layout()
 
         self.signal_layout1.addWidget(obj1)
+        self.signal_layout1.addWidget(obj2)
 
 if __name__ == "__main__" :
     app = QApplication(sys.argv) 
