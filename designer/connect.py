@@ -1,9 +1,8 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
-
-import matplotlib as mpl
 import numpy as np
+import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.font_manager as fm
@@ -25,38 +24,39 @@ class GUI(QMainWindow, form_class):
         self.groupBox_2.setEnabled(False)
 
         # graph setting
-        # figure1
-        fig1 = Figure()
-        obj1 = FigureCanvas(fig1)
-        ax1 = fig1.add_subplot(111)
-        ax1.plot(np.arange(0,60,1), [60 for _ in range(60)])
-        ax1.plot(np.arange(0,60,1), [110 for _ in range(60)])
-        x1 = [0,5,10,15,20,25,30,35,40,45,50,55]
-        y1 = [58,63,69,70,72,68,60,59,70,68,65,60]
-        ax1.scatter(x1,y1)
-        fig1.patch.set_facecolor('white')
-        ax1.patch.set_facecolor('white')
-        ax1.set_xticks([0,10,20,30,40,50,60])
-        ax1.set_yticks([40,70,100,130])
+        t = np.arange(0, 35, 5)
+        
+        s1 = [58,63,69,70,72,68,60]
+        s2 = [58,63,69,70,72,68,60]
+        s3 = [-1,1,1,-1,1,-1,1]
 
-        fig2 = Figure()
-        obj2 = FigureCanvas(fig2)
-        ax2 = fig2.add_subplot(111)
-        ax1.plot(np.arange(0,60,1), [60 for _ in range(60)])
-        ax1.plot(np.arange(0,60,1), [110 for _ in range(60)])
-        x2 = [0,5,10,15,20,25,30,35,40,45,50,55]
-        y2 = [58,63,69,70,72,68,60,59,70,68,65,60]
-        ax1.scatter(x2,y2)
-        fig2.patch.set_facecolor('white')
-        ax2.patch.set_facecolor('white')
-        ax2.set_xticks([0,10,20,30,40,50,60])
-        ax2.set_yticks([40,70,100,130])
-        # fig1.patch.set_alpha(0)
-        # ax1.patch.set_alpha(0)
-        # fig1.tight_layout()
+        fig, axs = plt.subplots(3, sharex=True)
+        obj = FigureCanvas(fig)
+        fig.subplots_adjust(hspace=0.1)   # Remove horizontal space between axes
 
-        self.signal_layout1.addWidget(obj1)
-        self.signal_layout1.addWidget(obj2)
+        # Plot each graph, and manually set the y tick values
+        axs[0].scatter(t, s1)
+        axs[0].plot(np.arange(0,31,1), [60 for _ in range(31)])
+        axs[0].plot(np.arange(0,31,1), [110 for _ in range(31)])
+        axs[0].set_yticks([40,70,100,130])
+        axs[0].set_ylabel("HR", fontsize=10)
+        axs[0].set_title("Realtime Details")
+
+        axs[1].scatter(t, s2)
+        axs[1].plot(np.arange(0,31,1), [60 for _ in range(31)])
+        axs[1].plot(np.arange(0,31,1), [110 for _ in range(31)])
+        axs[1].set_yticks([40,70,100,130])
+        axs[1].set_ylabel("SDNN", fontsize=10)
+
+        axs[2].scatter(t, s3)
+        axs[2].plot(np.arange(0,31,1), [0 for _ in range(31)])
+        axs[2].set_yticks([-1,0,1])
+        axs[2].set_ylabel("RMSSD", fontsize=8)
+        axs[2].set_xlabel("Time(s)", fontsize=10)
+
+        plt.tight_layout()
+
+        self.signal_layout1.addWidget(obj)
 
 if __name__ == "__main__" :
     app = QApplication(sys.argv) 
