@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>1210</width>
-    <height>870</height>
+    <height>923</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -127,51 +130,12 @@
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <widget class="QPushButton" name="btnStart">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>420</y>
-             <width>51</width>
-             <height>51</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>시작</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="btnPause">
-           <property name="geometry">
-            <rect>
-             <x>60</x>
-             <y>420</y>
-             <width>51</width>
-             <height>51</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>멈춤</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="btnStop">
-           <property name="geometry">
-            <rect>
-             <x>110</x>
-             <y>420</y>
-             <width>51</width>
-             <height>51</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>정지</string>
-           </property>
-          </widget>
           <widget class="QSlider" name="horizontalSlider">
            <property name="geometry">
             <rect>
-             <x>175</x>
-             <y>435</y>
-             <width>451</width>
+             <x>134</x>
+             <y>432</y>
+             <width>491</width>
              <height>22</height>
             </rect>
            </property>
@@ -185,8 +149,8 @@
           <widget class="QLabel" name="lblclock">
            <property name="geometry">
             <rect>
-             <x>575</x>
-             <y>456</y>
+             <x>571</x>
+             <y>451</y>
              <width>61</width>
              <height>21</height>
             </rect>
@@ -198,103 +162,38 @@
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
-         </widget>
-         <widget class="QGroupBox" name="groupBox_1">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>520</y>
-            <width>301</width>
-            <height>48</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border-line:rgb(0, 0, 127);</string>
-          </property>
-          <property name="title">
-           <string>소스를 선택하세요.</string>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QRadioButton" name="camera0_checked">
-             <property name="text">
-              <string>내장카메라</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="camera1_checked">
-             <property name="text">
-              <string>외장카메라</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="video_checked">
-             <property name="text">
-              <string>비디오</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>580</y>
-            <width>301</width>
-            <height>55</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>파일을 선택하세요.(비디오 선택시 활성화 됩니다.)</string>
-          </property>
-          <widget class="QPushButton" name="btnOpen">
+          <widget class="QPushButton" name="btnStart">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>21</y>
-             <width>61</width>
-             <height>23</height>
+             <x>20</x>
+             <y>420</y>
+             <width>51</width>
+             <height>51</height>
             </rect>
            </property>
            <property name="text">
-            <string>Open</string>
+            <string>시작</string>
            </property>
           </widget>
-          <widget class="QRadioButton" name="video_auto">
+          <widget class="QPushButton" name="btnStop">
            <property name="geometry">
             <rect>
-             <x>106</x>
-             <y>25</y>
+             <x>70</x>
+             <y>420</y>
              <width>51</width>
-             <height>16</height>
+             <height>51</height>
             </rect>
            </property>
            <property name="text">
-            <string>자동</string>
-           </property>
-          </widget>
-          <widget class="QRadioButton" name="video_manual">
-           <property name="geometry">
-            <rect>
-             <x>201</x>
-             <y>25</y>
-             <width>51</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>수동</string>
+            <string>정지</string>
            </property>
           </widget>
          </widget>
          <widget class="QWidget" name="results_box" native="true">
           <property name="geometry">
            <rect>
-            <x>350</x>
-            <y>520</y>
+            <x>190</x>
+            <y>570</y>
             <width>311</width>
             <height>241</height>
            </rect>
@@ -304,10 +203,10 @@
 border-radius: 10;</string>
           </property>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="1">
-            <widget class="QLabel" name="label_2">
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Repiration Rate</string>
+              <string>BP</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -324,20 +223,20 @@ border-radius: 10;</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QLabel" name="label_4">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
              <property name="text">
-              <string>BP</string>
+              <string>HR</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>HR</string>
+              <string>Repiration Rate</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -349,10 +248,10 @@ border-radius: 10;</string>
          <widget class="QPushButton" name="pushButton">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>680</y>
-            <width>131</width>
-            <height>51</height>
+            <x>530</x>
+            <y>650</y>
+            <width>121</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -363,9 +262,9 @@ border-radius: 10;</string>
           <property name="geometry">
            <rect>
             <x>690</x>
-            <y>410</y>
+            <y>400</y>
             <width>501</width>
-            <height>371</height>
+            <height>421</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -378,7 +277,7 @@ border-radius: 10;</string>
              <x>10</x>
              <y>10</y>
              <width>481</width>
-             <height>351</height>
+             <height>401</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="realtime_graph">
@@ -416,6 +315,39 @@ border-radius: 10;</string>
             </property>
            </layout>
           </widget>
+         </widget>
+         <widget class="QComboBox" name="cbbInput">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>520</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cbbInput2">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>520</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnOpen">
+          <property name="geometry">
+           <rect>
+            <x>460</x>
+            <y>520</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Open</string>
+          </property>
          </widget>
         </widget>
        </item>
